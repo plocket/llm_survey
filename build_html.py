@@ -28,9 +28,9 @@ def main():
         outfile.write(rendered_html)
 
     for model, items in data.items():
-        items = [markdown.convert(item["content"]) for item in items]
+        responses = [markdown.convert(item["content"]) for item in items]
         rendered_html = template.render(
-            items=items,
+            responses=responses,
             model=model,
             models=models,
             prompt=prompt,
